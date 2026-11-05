@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --dark: #1f3a5f;
+    --light: #e8eef7;
+    --background: #fbfbf8;
+    --accent: #b7791f;
+    --text: #222222;
+    --line: #d6d3cc;
+    --menu-background: rgba(31, 58, 95, .95);
+}
+
+body {
+    background-color: var(--background);
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+    max-width: 52rem;
+    margin: 0 auto;
+    padding: 0 1.5rem 3rem;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--dark);
+    line-height: 1.2;
+}
+
+header {
+    padding: 1.5rem 0 0.5rem;
+}
+
+header p {
+    margin: 0 0 1rem;
+}
+
+a:link {
+    color: var(--dark);
+}
+
+a:visited {
+    color: #5b4a7a;
+}
+
+a:active {
+    color: var(--accent);
+}
+
+nav {
+    background-color: var(--dark);
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        display: inline-block;
+        position: relative;
+    }
+
+
+    a {
+        display: block;
+        padding: 0.75rem 1rem;
+        text-decoration: none;
+        font-weight: 600;
+
+        &:link,
+        &:visited {
+            color: #ffffff;
+        }
+
+        &:hover {
+            background-color: var(--light);
+            color: var(--dark);
+        }
+    }
+
+    .current>a {
+        background-color: var(--accent);
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        margin: 0;
+        padding: .25rem 0;
+        min-width: 14rem;
+        top: 100%;
+        left: 0;
+        background-color: var(--menu-background);
+
+        li {
+            display: block;
+        }
+
+        a {
+            font-weight: 400;
+            padding: .5rem 1rem;
+        }
+
+        .soon {
+            color: #ffffff;
+            padding: 0.5rem 1rem;
+            opacity: 0.55;
+        }
+
+    }
+
+    .has-menu:hover .menu,
+    .has-menu:focus-within .menu {
+        display: block;
+
+    }
+
+    .has-menu>a::after {
+        content: "\25BE";
+        font-size: .8em;
+
+    }
+}
+
+
+figure {
+    margin: 1.5rem 0;
+
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border: 1px solid var(--line);
+
+        &:hover {
+            opacity: .8;
+        }
+
+        figcaption {
+            font-size: 0, 9rem;
+            color: #555555;
+            padding: 0.35rem 0;
+        }
+    }
+}
+
+footer {
+    border-top: 1px solid var(--line);
+    margin-top: 2rem;
+    padding-top: 0.75rem;
+    font-size: .9rem;
+}
